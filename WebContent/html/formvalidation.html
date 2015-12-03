@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nameApp">
+<head>
+<meta charset="UTF-8">
+<title>Form Validation</title>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="../js/formv.js"></script>
+<style>
+input.ng-invalid{
+border:1px solid red;
+}
+#main{
+height:200px;
+width:300px;
+border:1px  black solid;
+}
+</style>
+</head>
+<body ng-controller="myCtrl" >
+<form name="form1" >
+
+<label>First Name </label><input type="text" data-ng-model="fname" name="fname" placeholder="Enter your first name" required/><br>
+<span ng-show="form1.fname.dirty ">Wrong format</span>
+<span ng-show=" form1.$error.required ">Required</span>
+
+<label>Last Name </label><input type="text" data-ng-model="lname" placeholder="Enter your last name" required><br>
+<span ng-show="form1.lname.dirty">Wrong format</span>
+<span ng-show="form1.$error.required">Required</span>
+
+<label>Phone </label> <input type="number" data-ng-model="phonenumber" name="phonenumber" 
+data-ng-maxlength="10"   placeholder="Enter your phone number" required/><br>
+<span ng-show= "form1.phonenumber.$error.maxlength">enter 10 digit phone number.</span><br>
+
+<label>Email </label><input type="email" data-ng-model="email"name="email" placeholder="Enter your email"required>
+<span ng-show="form1.email.$error.required">Required</span>
+<span ng-show="form1.email.$error.email">not an email</span>
+<br>
+<label>Gender</label required><br>
+<input type= "radio" ng-model="gender" value="male" name="gender">Male<br>
+<input type= "radio" ng-model="gender" value="female" name="gender">Female
+<br>
+
+<input type="submit" data-ng-model="submit" name="submit">
+</form>
+<div id="main">
+{{fname}}
+{{lname}}<br>
+{{phonenumber}}<br>
+{{email}}<br>
+{{gender}}<br>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+<div>
+<ul>
+  <li ng-repeat="x in names">
+   Product Description: {{ x.product_description|uppercase}}
+   Price Listed: {{x.price}} 
+  </li>
+</ul>
+
+</div>
+<script>
+var app = angular.module('myapp', []);
+app.controller('myctrl', function($scope, $http) {
+    $http.get("../js/guitarcenter.json")
+    .success(function(data) {$scope.names = data.allProducts;});
+});
+</script>
+
+</body>
+</html>

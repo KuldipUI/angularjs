@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<body>
+<h2>Form Validation</h2>
+<div ng-app="myapp" ng-controller="myctrl" ng-init="fname='Joe'">
+First Name:<input type="text" ng-model="fname"><br>
+Last Name:<input type="text" ng-model="lname"><br>
+
+<p>{{fname + " " +lname }}</p>
+</div>
+
+<script>
+var app=angular.module('myapp',[]);
+app.controller('myctrl', function($scope) {
+    $scope.fname= "";
+    $scope.lname= "";
+});
+</script>
+</body>
+</html>

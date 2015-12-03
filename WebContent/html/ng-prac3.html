@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="nameApp">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script>
+var nameApp = angular.module('nameApp',[]);
+nameApp.controller('myctrl', function ($scope){
+	$scope.fname = 'Kuldip';
+	$scope.mname= 'Kaur';
+	$scope.lname='Parmar';
+
+	
+});
+</script>
+</head>
+<body ng-controller="myctrl">
+First Name:<input ng-model="fname" type="text"><br>
+Middle Name:<input ng-model="mname" type="text"><br>
+Last Name<input ng-model="lname" type="text"><br>
+<!-- Hello {{fname}} {{mname}} {{lname}} -->
+</body>
+</html>

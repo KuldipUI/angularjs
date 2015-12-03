@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+<input type="text" data-ng-model="fnumber">
+<input type="text" data-ng-model="snumber">
+<h1>{{fnumber + snumber|currency}}</h1>
+
+<script>
+var app = angular.module('myapp', []);
+app.controller("myctrl" , function($scope){
+	$scope.fnumber="10";
+	$scope.snumber="50";
+});
+</script>
+</body>
+</html>
