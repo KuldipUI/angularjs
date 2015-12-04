@@ -1,6 +1,7 @@
 var Myapp=angular.module("myapp",[]);
 Myapp.controller("todoctrl",function ($scope){
 	//first list of todos
+	//this is bikram
 	$scope.todos= [{
 		done: false,
 		text:'first'
